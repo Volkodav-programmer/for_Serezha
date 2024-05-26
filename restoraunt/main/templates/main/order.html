@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAFIA-Доставка</title>
+    <link rel="icon" href="{% static 'main/Logo.png' %}" type="image/png" />
+    <link rel="stylesheet" href="{% static 'main/Style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div id="logo">
+        <a href="{% url 'home'  %}">
+          <img src="{% static 'main/Logo.png' %}" alt="Logo" />
+        </a>
+      </div>
+      <div id="title">
+        <p>MAFIA</p>
+      </div>
+      <nav>
+        <div id="navbar">
+          <ul>
+            <li id="nav-home">
+              <a href="{% url 'home' %}">Головна</a>
+            </li>
+            <li id="nav-menu">
+              <a  href="{% url 'menu' %}">Меню ▾</a>
+              <ul id="dropdown-menu">
+                <li><a href="{% url 'menu' %}">Піца</a></li>
+                <li><a href="{% url 'menu' %}">Суші</a></li>
+                <li><a href="{% url 'menu' %}">Напої</a></li>
+                <li><a class="no-active" href="{% url 'order' %}">Доставка</a></li>
+              </ul>
+            </li>
+            <li id="nav-tablles">
+              <a href="{% url 'reservation' %}">Бронювання столиків</a>
+            </li>
+            <li id="nav-feedback"><a href="#">Відгуки та коментарі</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="contacts">
+        <p>+370 (673) 76 573</p>
+        <p>mafia@restaurant.com</p>
+      </div>
+    </header>
+    <div id="form-container">
+      <div id="ask-window">
+        <h2>Чи дозволяєте ви збереження даних форми в локальному сховищі?</h2>
+        <button id="accept-btn">Так</button>
+        <button id="cansel-btn">Ні</button>
+      </div>
+      <div class="form-block">
+        <h2>Форма замовлення з доставкою</h2>
+        <form action="" class="form" id="delivery-form">
+          <div class="input-box">
+            <label for="name">Введіть ваше ім'я</label>
+            <input
+              data-required="true"
+              type="text"
+              class="input-field"
+              name="name"
+              pattern="[^0-9]*"
+              placeholder="Максим"
+            />
+          </div>
+          <div class="input-box">
+            <label for="surname">Введіть ваше прізвище</label>
+            <input
+              data-required="true"
+              type="text"
+              class="input-field"
+              name="surname"
+              pattern="[^0-9]*"
+              placeholder="Воловик"
+            />
+          </div>
+          <div class="input-box">
+            <label for="tel">Введіть ваш номер телефону</label>
+            <input
+              data-required="true"
+              id="phone-num"
+              type="tel"
+              class="input-field"
+              name="phone"
+              placeholder="0957098150"
+            />
+          </div>
+          <div class="input-box">
+            <label for="date">Введіть адресу для доставки</label>
+            <input
+              data-required="true"
+              type="text"
+              class="input-field"
+              name="adress"
+              placeholder="Вулиця, № будинку , № квартири"
+            />
+          </div>
+          <div class="input-box">
+            <label for="quests">Виберіть тип оплати</label>
+            <select id="quest" name="quests" class="input-field">
+              <option value="default">Виберіть тип оплати...</option>
+              <option value="1">Готівка</option>
+              <option value="3">Карта</option>
+            </select>
+          </div>
+          <div id="button-block2">
+            <button type="submit" class="submit-button">Відправити</button>
+            <button type="reset" class="reset-button">Очистити</button>
+          </div>
+        </form>
+      </div>
+      <div id="new-alert2">
+        <h2>Заявка на доставку прийнята!</h2>
+        <button id="hide-block2">ok</button>
+      </div>
+    </div>
+    <script src="{% static 'main/order.js' %}"></script>
+  </body>
+</html>

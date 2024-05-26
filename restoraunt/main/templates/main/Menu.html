@@ -1,0 +1,204 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAFIA-Меню</title>
+    <link rel="icon" href="{% static 'main/Logo.png' %}" type="image/png" />
+    <link rel="stylesheet" href="{% static 'main/Style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div id="logo">
+        <a href="{% url 'home'  %}">
+          <img src="{% static 'main/Logo.png' %}" alt="Logo" />
+        </a>
+      </div>
+      <div id="title">
+        <p>MAFIA</p>
+      </div>
+      <nav>
+        <div id="navbar">
+          <ul>
+            <li id="nav-home">
+              <a href="{% url 'home' %}">Головна</a>
+            </li>
+            <li id="nav-menu">
+              <a class="no-active" href="{% url 'menu' %}">Меню ▾</a>
+              <ul id="dropdown-menu">
+                <li><a href="{% url 'menu' %}">Піца</a></li>
+                <li><a href="{% url 'menu' %}">Суші</a></li>
+                <li><a href="{% url 'menu' %}">Напої</a></li>
+                <li><a href="{% url 'order' %}">Доставка</a></li>
+              </ul>
+            </li>
+            <li id="nav-tablles">
+              <a href="{% url 'reservation' %}">Бронювання столиків</a>
+            </li>
+            <li id="nav-feedback"><a href="#">Відгуки та коментарі</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="contacts">
+        <p>+370 (673) 76 573</p>
+        <p>mafia@restaurant.com</p>
+      </div>
+    </header>
+    <div id="pizza-menu">
+      <h2>Піци</h2>
+      <div class="card">
+        <img src="{% static 'main/Card1.jpg' %}" alt="Піца Маргарита" class="card-image" />
+        <div class="card-body">
+          <p class="card-title">Маргарита</p>
+          <p class="ingredients">
+            Томатний соус, сир моцарелла, салямі, томати, шпинат.
+          </p>
+          <p class="price">30 cм - 199 грн | 45 см - 299 грн</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'main/Card2.jpg' %}" alt="Піца Пепероні" class="card-image" />
+        <div class="card-body">
+          <p class="card-title">Пепероні</p>
+          <p class="ingredients">
+            Томатний соус, сир моцарелла, пепероні, холопеньо, солодкий соус
+            чилі, цибуля маринована.
+          </p>
+          <p class="price">30 cм - 199 грн | 45 см - 299 грн</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'main/Card3.jpg' %}" alt="Піца Вегетеріанська" class="card-image" />
+        <div class="card-body">
+          <p class="card-title">Вегетеріанська</p>
+          <p class="ingredients">
+            Томатний соус, моцарелла, томати, шпинат, орегано, базилік.
+          </p>
+          <p class="price">30 cм - 149 грн | 45 см - 229 грн</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'main/Card4.jpg' %}" alt="Піца Фірмова" class="card-image" />
+        <div class="card-body">
+          <p class="card-title">Фірмова</p>
+          <p class="ingredients">
+            Томатний соус, сир моцарелла, салямі, томати, оливки, базилік, соус
+            фірмовий.
+          </p>
+          <p class="price">30 cм - 219 грн | 45 см - 299 грн</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'main/Card5.jpg' %}" alt="Піца 4 Сира" class="card-image" />
+        <div class="card-body">
+          <p class="card-title">4 Сира</p>
+          <p class="ingredients">
+            Томатний соус, сир моцарелла, сир фета, сир дор блю, сир чедер,
+            горіхи кешью.
+          </p>
+          <p class="price">30 cм - 239 грн | 45 см - 339 грн</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'main/Card6.png' %}" alt="Піца Гавайська" class="card-image" />
+        <div class="card-body">
+          <p class="card-title">Гавайська</p>
+          <p class="ingredients">
+            Томатний соус, сир моцарелла, ананас, шинка, базилік.
+          </p>
+          <p class="price">30 cм - 189 грн | 45 см - 269 грн</p>
+        </div>
+      </div>
+    </div>
+    <div id="sushi-menu">
+      <h2>Суші та роли</h2>
+      <div class="card">
+        <img src="{% static 'main/Card7.jpg' %}" alt="Cуші Макі" class="card-image" />
+        <div class="card-body">
+          <p class="card-title">Суші Макі</p>
+          <p class="ingredients">Рис, лосось, норі.</p>
+          <p class="price">6 шт - 149 грн</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'main/Card8.jpg' %}" alt="Роли Філадельфія" class="card-image" />
+        <div class="card-body">
+          <p class="card-title">Роли Філадельфія</p>
+          <p class="ingredients">Лосось, сир Філадельфія, огірок.</p>
+          <p class="price">8 шт - 249 грн</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'main/Card9.jpg' %}" alt="Роли Каліфорнія" class="card-image" />
+        <div class="card-body">
+          <p class="card-title">Роли Каліфорнія</p>
+          <p class="ingredients">
+            Лосось, авокадо, огірок, майонез, ікра тобіко.
+          </p>
+          <p class="price">8 шт - 289 грн</p>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="{% static 'main/Card10.jpg' %}"
+          alt="Філадельфія з креветкою"
+          class="card-image"
+        />
+        <div class="card-body">
+          <p class="card-title">Філадельфія з креветкою</p>
+          <p class="ingredients">
+            Креветка, сир філадельфія, огірок, соус чилі-манго.
+          </p>
+          <p class="price">8 шт - 189 грн</p>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="{% static 'main/Card11.jpg' %}"
+          alt="Запечений рол з лососем"
+          class="card-image"
+        />
+        <div class="card-body">
+          <p class="card-title">Запечений рол з лососем</p>
+          <p class="ingredients">
+            Лосось, сир філадельфія, огірок, салат айсберг, майонез, ікра
+            тобіко.
+          </p>
+          <p class="price">8 шт - 189 грн</p>
+        </div>
+      </div>
+    </div>
+    <div id="drinks-menu">
+      <h2>Напої</h2>
+      <div class="card">
+        <img
+          src="{% static 'main/Drink1.jpg' %}"
+          alt="Pepsi Black (0,5л)"
+          class="drink-card-image"
+        />
+        <div class="card-body">
+          <p class="card-title">Pepsi Black (0,5л)</p>
+          <p class="drink-price">39 грн</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'main/Drink2.jpg' %}" alt="Pepsi (0,5л)" class="drink-card-image" />
+        <div class="card-body">
+          <p class="card-title">Pepsi (0,5л)</p>
+          <p class="drink-price">39 грн</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'main/Drink3.jpg' %}" alt="Mirinda (0,33л)" class="drink-card-image" />
+        <div class="card-body">
+          <p class="card-title">Mirinda (0,33л)</p>
+          <p class="drink-price">29 грн</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <span>Designed by Volovyk Maksym 2023</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAFIA-Головна сторінка</title>
+    <link rel="icon" href="{% static 'main/Logo.png' %}" type="image/png" />
+    <link rel="stylesheet" href="{% static 'main/Style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div id="logo">
+        <a href="{% url 'home'  %}">
+          <img src="{% static 'main/Logo.png' %}" alt="Logo" />
+        </a>
+      </div>
+      <div id="title">
+        <p>MAFIA</p>
+      </div>
+      <nav>
+        <div id="navbar">
+          <ul>
+            <li id="nav-home">
+              <a class="no-active" href="Home page.html">Головна</a>
+            </li>
+            <li id="nav-menu">
+              <a href="{% url 'menu' %}">Меню ▾</a>
+              <ul id="dropdown-menu">
+                <li><a href="{% url 'menu' %}">Піца</a></li>
+                <li><a href="{% url 'menu' %}">Суші</a></li>
+                <li><a href="{% url 'menu' %}">Напої</a></li>
+                <li><a href="{% url 'order' %}">Доставка</a></li>
+              </ul>
+            </li>
+            <li id="nav-tablles">
+              <a href="{% url 'reservation' %}">Бронювання столиків</a>
+            </li>
+            <li id="nav-feedback"><a href="#">Відгуки та коментарі</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="contacts">
+        <p>+370 (673) 76 573</p>
+        <p>mafia@restaurant.com</p>
+      </div>
+    </header>
+    <div id="background1">
+      <div id="content-block">
+        <div id="content">
+          <div id="column1">
+            <h2>{{ content }}</h2>
+            <p>
+              MAFIA - ресторан, що поєднує в собі італійську та японську кухні.
+              Кращі шеф-кухарі з різних кутків світу щоденно працюють над тим,
+              щоб дивувати наших клієнтів неперевершаними стравами з таких на
+              перший погляд несхожих, але цікавих та унікальних культур. Зайти
+              разом з сім'єю на непереваршану вечерю, або провести чудову ніч з
+              друзями - вирішувати тільки вам, адже ми залишимо вас задоволеними
+              в будь-якому разі!
+            </p>
+          </div>
+          <div id="column2">
+            <p>
+              Що ж саме відрізняє нас від багатьох схожих закладів? Дуже просто.
+              Це затишна та стильна атмосфера в усьому. Весь наш персонал
+              старається лише з однією метою - щоб наші гості вийшли
+              задоволеними не лише смачними стравами, а й обслуговуванням
+              досвідченими офіціантами, які допоможуть обрати з нашого меню саме
+              ту позицію, що ідеально доповнить ваш вечір. Також замовлення
+              можно зробити з доставкою та спробувати щось нове навіть не
+              виходячи з дому. Ми чекаємо на вас!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="slider-title"><h2>Найпопулярніші страви</h2></div>
+      <div class="slider-container">
+        <div id="slider">
+          <div class="slide" id="first-slide">
+            <img class="slide-image" src="{% static 'main/Card3.jpg' %}" alt="Slide 1" />
+            <div class="slide-text">Піца Вегетеріанська</div>
+          </div>
+          <div class="slide">
+            <img class="slide-image" src="{% static 'main/For_slider2.jpg' %}" alt="Slide 1" />
+            <div class="slide-text">Рол Філадельфія</div>
+          </div>
+          <div class="slide">
+            <img class="slide-image" src="{% static 'main/For_slider3.jpg' %}" alt="Slide 1" />
+            <div class="slide-text">Запечений рол з лососем</div>
+          </div>
+        </div>
+      </div>
+      <div id="schedule-block">
+        <div id="schedule">
+          <h2>Розклад роботи</h2>
+          <table id="schedule-table">
+            <thead>
+              <tr>
+                <th>День тижня</th>
+                <th>Графік роботи</th>
+              </tr>
+            </thead>
+            <tr>
+              <td>Понеділок</td>
+              <td>10:00 - 21:00</td>
+            </tr>
+            <tr>
+              <td>Вівторок</td>
+              <td>10:00 - 21:00</td>
+            </tr>
+            <tr>
+              <td>Середа</td>
+              <td>10:00 - 21:00</td>
+            </tr>
+            <tr>
+              <td>Четвер</td>
+              <td>10:00 - 21:00</td>
+            </tr>
+            <tr>
+              <td>П'ятниця</td>
+              <td>12:00 - 23:00</td>
+            </tr>
+            <tr>
+              <td>Субота</td>
+              <td>12:00 - 23:00</td>
+            </tr>
+            <tr>
+              <td>Неділя</td>
+              <td>11:00 - 22:00</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <span>Designed by Volovyk Maksym 2023</span>
+    </footer>
+    <script src="{% static 'main/slider.js' %}"></script>
+  </body>
+</html>
